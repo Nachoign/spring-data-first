@@ -1,0 +1,6 @@
+libs/
+target/
+.settings/
+.classpath
+.project
+.DS_STORE
