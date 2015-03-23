@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -22,6 +23,8 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.stereotype.Controller;
 
+@Configuration
+@EnableJpaRepositories(basePackages = { "com.nacho.repository" })
 @ComponentScan(basePackages = "com.nacho", excludeFilters = {
 		@ComponentScan.Filter(value = Controller.class, type = FilterType.ANNOTATION),
 		@ComponentScan.Filter(value = Configuration.class, type = FilterType.ANNOTATION) })
